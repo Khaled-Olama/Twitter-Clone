@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Twitter Clone</title>
+		<link rel="stylesheet" href="dist/output.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="icon" type="image/png" href="imgs/Twitter-logo.png" />
+	</head>
+	<body class="bg-white dark:bg-dim-900">
+		<!-- Container & Layout Structure  -->
+		<main class="container mx-auto h-screen flex xl:max-w-[1200px]">
+			<!-- Start "Left" Side -->
+			<div class="xl:w-1/5 w-20 h-full flex flex-col xl:pr-4">
+				<!-- Logo -->
+				<a
+					href="#"
+					class="flex justify-center items-center xl:justify-start text-blue-400 my-2"
+				>
+					<i class="fa-brands fa-twitter text-4xl"></i>
+				</a>
+				<!-- Nav -->
+				<nav class="mt-5">
+					<a href="#" class="link-active mb-8 dark:text-white">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill="currentColor"
+								d="M19 21H5a1 1 0 0 1-1-1v-9H1l10.327-9.388a1 1 0 0 1 1.346 0L23 11h-3v9a1 1 0 0 1-1 1ZM6 19h12V9.158l-6-5.455l-6 5.455V19Zm6-4a2.5 2.5 0 1 1 0-5a2.5 2.5 0 0 1 0 5Z"
+							/>
+						</svg>
+						<span class="icon font-bold">Home</span>
+					</a>
+					<a href="#" class="link mb-8">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M11.097 1.515a.75.75 0 01.589.882L10.666 7.5h4.47l1.079-5.397a.75.75 0 111.47.294L16.665 7.5h3.585a.75.75 0 010 1.5h-3.885l-1.2 6h3.585a.75.75 0 010 1.5h-3.885l-1.08 5.397a.75.75 0 11-1.47-.294l1.02-5.103h-4.47l-1.08 5.397a.75.75 0 01-1.47-.294l1.02-5.103H3.75a.75.75 0 110-1.5h3.885l1.2-6H5.25a.75.75 0 010-1.5h3.885l1.08-5.397a.75.75 0 01.882-.588zM10.365 9l-1.2 6h4.47l1.2-6h-4.47z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+						<span class="icon">Explore</span>
+					</a>
+					<a href="#" class="link mb-8">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+							/>
+						</svg>
+						<span class="icon">Notifications</span>
+					</a>
+					<a href="#" class="link mb-8">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+							/>
+						</svg>
+						<span class="icon">Messages</span>
+					</a>
+					<a href="#" class="link mb-8">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+							/>
+						</svg>
+						<span class="icon">Bookmarks</span>
+					</a>
+					<a href="#" class="link mb-8">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="-2 -2 24 24"
+						>
+							<g fill="currentColor">
+								<path
+									d="M15 6.947c-.368.16-.763.27-1.178.318c.424-.25.748-.646.902-1.117a4.16 4.16 0 0 1-1.304.49A2.06 2.06 0 0 0 11.923 6c-1.133 0-2.051.905-2.051 2.02c0 .158.018.312.053.46a5.854 5.854 0 0 1-4.228-2.11a1.982 1.982 0 0 0-.278 1.015c0 .7.363 1.32.913 1.681a2.076 2.076 0 0 1-.93-.253v.025a2.03 2.03 0 0 0 1.646 1.98a2.108 2.108 0 0 1-.927.034a2.049 2.049 0 0 0 1.916 1.403a4.156 4.156 0 0 1-2.548.864c-.165 0-.328-.01-.489-.028A5.863 5.863 0 0 0 8.144 14c3.774 0 5.837-3.078 5.837-5.748l-.007-.262A4.063 4.063 0 0 0 15 6.947z"
+								/>
+								<path
+									d="M4 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4zm0-2h12a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z"
+								/>
+							</g>
+						</svg>
+						<span class="icon">Twitter Blue</span>
+					</a>
+					<a href="#" class="link mb-8">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+							/>
+						</svg>
+						<span class="icon">Profile</span>
+					</a>
+					<a href="#" class="link mb-8">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+							/>
+						</svg>
+						<span class="icon">More</span>
+					</a>
+				</nav>
+				<!-- Button For Tweets -->
+				<a
+					href="#"
+					class="mx-auto w-11 h-11 xl:w-full flex items-center justify-center bg-[rgb(29,155,240)] hover:bg-[rgb(26,140,216)] rounded-full text-white font-bold transition delay-150 duration-150"
+				>
+					<i
+						hidden
+						class="fa-solid fa-feather text-xl block xl:before:hidden"
+					></i>
+					<span class="icon xl:ml-0 text-base font-bold">Tweet</span>
+				</a>
+				<!-- User Info -->
+				<div
+					class="w-14 xl:w-full mx-auto mt-auto flex justify-between mb-2 rounded-full p-2 cursor-pointer"
+				>
+					<img
+						class="w-10 h-10 rounded-full"
+						src="imgs/My Professional Photo.jpg"
+						alt="User Picture"
+					/>
+					<div class="hidden xl:flex flex-col">
+						<h4 class="text-gray-800 dark:text-white font-bold text-sm">
+							Khaled Olama
+						</h4>
+						<p class="text-gray-400 text-sm">@maybe_khaled</p>
+					</div>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="w-6 h-6 mt-2 dark:text-white"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+						/>
+					</svg>
+				</div>
+			</div>
+			<!-- End "Left" Side -->
+			<!-- Start "Middle" Side -->
+			<div class="w-full xl:w-1/2 h-screen overflow-y-auto overflow-x-hidden">
+				<!-- Sticky Header -->
+				<div
+					class="flex justify-between items-center border px-4 py-3 sticky top-0 bg-white dark:bg-dim-900 border-gray-200 dark:border-gray-700"
+				>
+					<h4 class="text-gray-800 dark:text-gray-100 font-bold">Home</h4>
+					<i class="fa-brands fa-twitter text-lg text-blue-400"></i>
+				</div>
+				<!-- Tweet Box -->
+				<div class="border border-gray-200 dark:border-dim-200 pb-3">
+					<div class="flex p-4">
+						<img
+							class="w-10 h-10 rounded-full"
+							src="imgs/My Professional Photo.jpg"
+							alt="User Picture"
+						/>
+						<textarea
+							class="bg-transparent text-gray-900 dark:text-white focus:outline-none resize-none w-full h-16 p-2"
+							placeholder="What's happening?"
+						></textarea>
+					</div>
+					<div class="flex w-full text-white p-4">
+						<a href="#" class="text-blue-400 rounded-full p-2">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="w-6 h-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="text-blue-400 rounded-full p-2">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="w-6 h-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M12.75 8.25v7.5m6-7.5h-3V12m0 0v3.75m0-3.75H18M9.75 9.348c-1.03-1.464-2.698-1.464-3.728 0-1.03 1.465-1.03 3.84 0 5.304 1.03 1.464 2.699 1.464 3.728 0V12h-1.5M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="text-blue-400 rounded-full p-2">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="w-6 h-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+								/>
+							</svg>
+						</a>
+						<a
+							href="#"
+							class="hidden lg:block lg:text-blue-400 lg:rounded-full lg:p-2"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="w-6 h-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"
+								/>
+							</svg>
+						</a>
+						<a
+							href="#"
+							class="hidden lg:block lg:text-blue-400 lg:rounded-full lg:p-2"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="w-6 h-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="text-blue-400 rounded-full p-2">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="w-6 h-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+								/>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+								/>
+							</svg>
+						</a>
+						<a
+							href="#"
+							class="bg-[rgb(29,155,240)] opacity-50 hover:bg-[rgb(29,155,240)] hover:opacity-100 text-white rounded-full px-6 ml-auto mr-1 flex items-center font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-150"
+						>
+							Tweet
+						</a>
+					</div>
+				</div>
+				<!-- Show Tweets -->
+				<button
+					class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200 w-full hover:bg-gray-100 text-center py-4 bg-white dark:bg-dim-900 border border-gray-200 dark:border-dim-200 cursor-pointer text-blue-400 text-sm"
+				>
+					Show 22 Tweets
+				</button>
+				<!-- Tweet -->
+				<div
+					class="border border-gray-200 dark:border-dim-200 cursor-pointer pb-4"
+				>
+					<div class="flex p-4 pb-0">
+						<img
+							class="h-9 w-9 rounded-full"
+							src="imgs/My Professional Photo.jpg"
+							alt="User Picture"
+						/>
+						<p
+							class="ml-2 flex flex-shrink-0 items-center font-semibold text-gray-800 dark:text-white"
+						>
+							Khaled Olama
+							<span class="ml-1 text-sm leading-5 text-gray-400">
+								@maybe_khaled
+								<span class="hidden min-[400px]:inline">
+									<sup>.</sup> Apr 29
+								</span>
+							</span>
+						</p>
+					</div>
+					<div class="pl-8 xl:pl-16 pr-4">
+						<p
+							class="ml-[26px] text-sm font-medium sm:w-auto xl:ml-auto text-gray-800 dark:text-white"
+						>
+							Good code is not just about functionality, but also readability.
+							<br />
+							<br />
+							Write code that is easy to understand and maintain, not just for
+							yourself, but also for your team and future developers.
+							<br />
+							<br />
+							A little effort in this area goes a long way.
+							<br />
+							<a href="#" class="text-blue-400">#coding</a>
+						</p>
+						<img
+							class="rounded-2xl border border-gray-600 my-3 mr-2 w-full"
+							src="imgs/tweet-photo.jpg"
+							alt="Tweet Photo"
+						/>
+						<div class="flex items-center w-full justify-between">
+							<div class="tweet-icon hover:text-blue-400">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="w-6 h-6 mr-[2px]"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+									/>
+								</svg>
+								89
+							</div>
+							<div class="tweet-icon hover:text-green-400">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="w-6 h-6 mr-[2px]"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3"
+									/>
+								</svg>
+								162
+							</div>
+							<div class="tweet-icon hover:text-red-600">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="w-6 h-6 mr-[2px]"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+									/>
+								</svg>
+								324
+							</div>
+							<div class="tweet-icon hover:text-blue-400">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+								>
+									<path
+										fill="currentColor"
+										d="M4 20V9h4v11H4Zm6 0V4h4v16h-4Zm6 0v-7h4v7h-4Z"
+									/>
+								</svg>
+								19k
+							</div>
+							<div class="tweet-icon hover:text-blue-400">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="w-6 h-6 mr-[2px]"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
+									/>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Dark Mode Toggle -->
+				<div
+					class="py-2 border border-gray-200 dark:border-dim-200 bg-gray-50 dark:bg-dim-300"
+				>
+					<div
+						class="text-center p-6 bg-white dark:bg-dim-900 border-y border-gray-200 dark:border-dim-200"
+					>
+						<h3 class="text-gray-900 dark:text-white text-2xl font-bold mb-2">
+							Customize your view
+						</h3>
+						<p class="text-gray-500 text-sm mb-5">
+							Manage your font size, color and background. These settings affect
+							all the Twitter accounts on this browser.
+						</p>
+						<a
+							href="javascript:void(0)"
+							onclick="document.querySelector('html').classList.toggle('dark')"
+							class="mx-auto w-11 h-11 md:w-48 flex items-center justify-center bg-blue-400 py-3 rounded-full text-white font-bold transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-100"
+						>
+							<i
+								class="fa-solid fa-cloud-moon block md:before:hidden text-lg"
+							></i>
+							<span class="hidden md:block font-bold">Toggle Dark Mode</span>
+						</a>
+					</div>
+				</div>
+				<!-- Spinner -->
+				<div class="border border-gray-200 dark:border-gray-700 p-4">
+					<svg class="w-8 h-8 mx-auto animate-spin-fast">
+						<circle
+							cx="16"
+							cy="16"
+							fill="none"
+							r="14"
+							stroke-width="4"
+							style="stroke: rgb(29, 161, 242); opacity: 0.2"
+						></circle>
+						<circle
+							cx="16"
+							cy="16"
+							fill="none"
+							r="14"
+							stroke-width="4"
+							style="
+								stroke: rgb(29, 161, 242);
+								stroke-dasharray: 80;
+								stroke-dashoffset: 60;
+							"
+						></circle>
+					</svg>
+				</div>
+			</div>
+			<!-- End "Middle" Side -->
+			<!-- Start "Right" Side -->
+			<div class="hidden w-[30%] xl:block">
+				<!-- Search -->
+				<div class="relative m-2">
+					<i
+						class="fa-solid fa-magnifying-glass text-gray-600 absolute left-4 top-1/2 -translate-y-1/2"
+					></i>
+					<input
+						type="text"
+						class="w-full bg-gray-200 dark:bg-dim-400 border-gray-200 dark:border-dim-400 text-dim-300 dark:text-gray-100 focus:outline-none font-normal h-9 pl-12 text-sm rounded-full"
+						placeholder="Search Twitter"
+					/>
+				</div>
+				<!-- Trending -->
+				<div class="bg-gray-50 dark:bg-dim-700 rounded-2xl m-2">
+					<h3
+						class="text-gray-900 dark:text-white font-bold p-3 border-b border-gray-200 dark:border-dim-200"
+					>
+						What's happening
+					</h3>
+					<div class="border-b border-gray-200 dark:border-dim-200 p-3">
+						<h4 class="text-gray-800 dark:text-white font-bold">#Coding</h4>
+						<p class="text-gray-400 text-xs">404k Tweets</p>
+					</div>
+					<div class="border-b border-gray-200 dark:border-dim-200 p-3">
+						<h4 class="text-gray-800 dark:text-white font-bold">
+							#TailwindCSS
+						</h4>
+						<p class="text-gray-400 text-xs">219k Tweets</p>
+					</div>
+					<div class="border-b border-gray-200 dark:border-dim-200 p-3">
+						<h4 class="text-gray-800 dark:text-white font-bold">#Clean Code</h4>
+						<p class="text-gray-400 text-xs">87k Tweets</p>
+					</div>
+					<div class="border-b border-gray-200 dark:border-dim-200 p-3">
+						<h4 class="text-gray-800 dark:text-white font-bold">
+							#Problem Solving
+						</h4>
+						<p class="text-gray-400 text-xs">531k Tweets</p>
+					</div>
+					<div class="text-blue-400 p-3 cursor-pointer">Show more</div>
+				</div>
+				<!-- Follow-up suggestions -->
+				<div class="bg-gray-50 dark:bg-dim-700 rounded-2xl m-2">
+					<h3
+						class="text-gray-900 dark:text-white font-bold p-3 border-b border-gray-200 dark:border-dim-200"
+					>
+						Who to follow
+					</h3>
+					<div
+						class="flex justify-between items-center border-b border-gray-200 dark:border-dim-200 p-5"
+					>
+						<div class="flex">
+							<img
+								class="w-10 h-10 rounded-full"
+								src="imgs/Tailwind-photo.jpg"
+								alt="User Picture"
+							/>
+							<div class="ml-2 text-sm">
+								<h5 class="text-gray-900 dark:text-white font-bold">
+									Tailwind CSS
+								</h5>
+								<p class="text-gray-400">@tailwindcss</p>
+							</div>
+						</div>
+						<!-- Follow Button -->
+						<a
+							href="#"
+							class="text-blue-400 hover:text-white hover:bg-blue-400 text-xs font-bold border-2 border-blue-400 rounded-full px-4 py-1 transition delay-100 duration-100"
+							>Follow</a
+						>
+					</div>
+					<div
+						class="flex justify-between items-center border-b border-gray-200 dark:border-dim-200 p-5"
+					>
+						<div class="flex">
+							<img
+								class="w-10 h-10 rounded-full"
+								src="imgs/myPhoto.jpg"
+								alt="User Picture"
+							/>
+							<div class="ml-2 text-sm">
+								<h5 class="text-gray-900 dark:text-white font-bold">
+									Khaled Olama
+								</h5>
+								<p class="text-gray-400">@maybe_khaled</p>
+							</div>
+						</div>
+						<!-- Follow Button -->
+						<a
+							href="#"
+							class="text-blue-400 hover:text-white hover:bg-blue-400 text-xs font-bold border-2 border-blue-400 rounded-full px-4 py-1 transition delay-100 duration-100"
+							>Follow</a
+						>
+					</div>
+					<div class="border-b border-gray-200 dark:border-dim-200 p-5">
+						<div class="flex gap-x-4 animate-pulse">
+							<div class="bg-gray-400 w-12 h-12 rounded-full"></div>
+							<div class="flex-1 space-y-2 py-1">
+								<div class="bg-gray-400 w-5/6 h-4 rounded"></div>
+								<div class="bg-gray-400 w-3/4 h-4 rounded"></div>
+								<div class="bg-gray-400 w-4/6 h-4 rounded"></div>
+							</div>
+						</div>
+					</div>
+					<div class="text-blue-400 p-3 cursor-pointer">Show more</div>
+				</div>
+			</div>
+			<!-- End "Right" Side -->
+		</main>
+	</body>
+</html>
